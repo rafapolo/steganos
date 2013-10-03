@@ -47,8 +47,8 @@ def encode path
 	data = File.read(path)	
 	hex_encoded = data.to_b64.compact.to_hex
 	
-	puts hex_encoded
-	puts hex_encoded.size
+	# puts hex_encoded
+	# puts hex_encoded.size
 	size = hex_encoded.size/6+1
 	dimension = get_dimensions(size)	
 	height = dimension[0]
