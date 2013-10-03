@@ -9,4 +9,4 @@ The concept is easy and creative: get the data from the file, encode into base64
 
 ![1.3mb encoded PDF and zoom](https://raw.github.com/rafapolo/steganos/master/sample.png)
 
-This was a prove of concept so I could upload 6GB of videos to Flickr.
+This was a prove of concept so I could upload 6GB of videos and PDFs to Flickr.
