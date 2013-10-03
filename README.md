@@ -1,5 +1,6 @@
 Steganos
 =======
+
 Algorithms to steganography files into images, and vice-versa.
 =======
 
