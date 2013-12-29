@@ -29,10 +29,8 @@ def get_dimensions(size)
 	height = Math.sqrt(size)
 	unless is_int? height
 		width = size / height.ceil
-		binding.pry
 		unless is_int? width
 			width = width.floor
-			binding.pry
 			height = height.ceil + 1
 		end
 	else
@@ -46,17 +44,14 @@ def encode path
 	start = Time.now	
 	data = File.read(path)	
 	hex_encoded = data.to_b64.compact.to_hex
-	
-	# puts hex_encoded
-	# puts hex_encoded.size
 	size = hex_encoded.size/6+1
-	dimension = get_dimensions(size)	
+	dimension = get_dimensions(size)
+	puts dimension
 	height = dimension[0]
 	width = dimension[1]
 
 	puts "Pixels: #{size}"
 	puts "Dimension: #{height}x#{width}"
-	puts
 
 	png = ChunkyPNG::Image.new(height, width)
 
@@ -70,14 +65,14 @@ def encode path
 
 		# compose
 		x += 1
-		if x>height
+		if x>height-1
 			x = 0
 			y += 1
 		end
-		if y>width
+		if y>width-1
 			y = 0
 		end
-		puts "#{x}, #{y} = #{hexa_color}"
+		#puts "#{x}, #{y} = #{hexa_color}"
 		
 	end
 	png.metadata['Author'] = 'ExtraPolo!'
@@ -116,5 +111,5 @@ def decode path
 end
 
 system "clear"
-encode 'Ostrom - Governing the Commons - The Evolution of Institutions for Collective Action.pdf'
+encode 'cypherpunks.pdf'
 decode 'Ostrom - Governing the Commons - The Evolution of Institutions for Collective Action.pdf.png'
