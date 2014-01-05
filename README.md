@@ -5,7 +5,9 @@ The concept is easy and creative: get the data from the file, encode into base64
 
 This was a prove of concept so I could upload 6GB of videos and PDFs to Flickr as images.
 
-![1.3mb encoded PDF and zoom](https://raw.github.com/rafapolo/steganos/master/sample.png)
+![Julian Assange - Cypherpunks PDF](https://raw.github.com/rafapolo/steganos/master/cypherpunks.pdf.png)
+
+Julian Assange - Cypherpunks PDF
 
 Simple text encoding sample:
 
@@ -22,7 +24,5 @@ Simple text encoding sample:
 4) final 7 hexa color pixels to represent "extrapolo" data as image
  => #78da8b #8ac830 #48ce75 #2b4f32 #aa28e3 #02001f #be0464
 ```
-
-![Julian Assange - Cypherpunks PDF](https://raw.github.com/rafapolo/steganos/master/cypherpunks.pdf.png)
 
 More: http://en.wikipedia.org/wiki/Steganography
