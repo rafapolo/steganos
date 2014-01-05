@@ -6,7 +6,7 @@ The concept is easy and creative: get the data from the file, encode into base64
 This was a prove of concept so I could upload 6GB of videos and PDFs to Flickr as images.
 
 [Julian Assange, Cypherpunks 6.3MB PDF as a decodable 4MB PNG]
-![Julian Assange - Cypherpunks PDF(https://raw.github.com/rafapolo/steganos/master/cypherpunks.pdf.png)](https://raw.github.com/rafapolo/steganos/master/output-sample.jpg)
+[![Julian Assange - Cypherpunks PDF] (https://raw.github.com/rafapolo/steganos/master/cypherpunks.pdf.png)](https://raw.github.com/rafapolo/steganos/master/output-sample.jpg)
 
 Simple text encoding sample:
 
