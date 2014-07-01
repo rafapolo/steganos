@@ -16,6 +16,11 @@ Simple text encoding sample:
  
 final 7 hexa color pixels to represent "extrapolo" data as image
  => #78da8b #8ac830 #48ce75 #2b4f32 #aa28e3 #02001f #be0464
+ 
+and back to the original data, 
+"78da8b8ac83048ce752b4f32aa28e302001fbe0464".from_hex.unzip.from_b64
+=> "extrapolo"
+
 ```
 
 More: http://en.wikipedia.org/wiki/Steganography
