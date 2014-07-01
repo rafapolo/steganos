@@ -19,7 +19,7 @@ class String
 
   def from_b64
   	Base64.decode64(self)
-  end  
+  end
 
   def zip
 	Zlib::Deflate.deflate(self, Zlib::BEST_COMPRESSION)
@@ -32,9 +32,9 @@ end
 
 class Steganos
 
-	# get aproximated better dimension for needed pixels 
+	# get aproximated better dimension for needed pixels size
 	# 15 = 3 x 5 not 4 x 4 as follow
-	def get_dimensions(size)	
+	def get_dimensions(size)
 		dim = Math.sqrt(size).ceil
 		[dim, dim]
 
@@ -54,10 +54,10 @@ class Steganos
 
 	def encode path
 		puts "Encoding #{path}..."
-		start = Time.now	
+		start = Time.now
 
-		data = File.read(path)	
-		hex_encoded = data.to_b64.zip.to_hex		
+		data = File.read(path)
+		hex_encoded = data.to_b64.zip.to_hex
 
 		size = hex_encoded.size/6+1
 		dimension = get_dimensions(size)
@@ -69,7 +69,7 @@ class Steganos
 
 		png = ChunkyPNG::Image.new(height, width)
 		x = y = count = 0
-		hex_encoded.scan(/.{1,6}/).each do |hexa_color|		
+		hex_encoded.scan(/.{1,6}/).each do |hexa_color|
 			printf("\r%d%", 100*(count+=1)/size)
 			# fill last pixel missing data
 			hexa_color = hexa_color + "0" * (6-hexa_color.size) if count>size-1 && hexa_color.size<6
@@ -82,12 +82,12 @@ class Steganos
 				y += 1
 			end
 			y = 0 if y>width
-			
+
 		end
 		png.metadata['Author'] = 'ExtraPolo!'
 		png.metadata['Title'] = path
 		out_path = "#{path}.png"
-		png.save(out_path, :interlace => true)	
+		png.save(out_path, :interlace => true)
 
 		puts ("-> encoded in %3.2f s" % [Time.now - start])
 	end
@@ -95,7 +95,7 @@ class Steganos
 	def decode path
 		puts "Decoding #{path}..."
 		start = Time.now
-		png = ChunkyPNG::Image.from_file(path)	
+		png = ChunkyPNG::Image.from_file(path)
 		pixels = png.pixels
 		size = pixels.size
 
@@ -105,12 +105,13 @@ class Steganos
 			printf("\r%d%", 100*(count+=1)/size)
 			if match_hex = ChunkyPNG::Color.to_hex(p).match(/#(.{1,6})ff/)
 				clean_hex = match_hex[1]
-				clean_hex.gsub!(/0+$/, '') if count==size # remove extra data on last pixel
+				# remove extra data on last pixel
+				clean_hex.gsub!(/0+$/, '') if count==size
 				hex_encoded << clean_hex
 			end
 		end
-		
-		# inverse data.to_b64.zip.to_hex	
+
+		# inverse data.to_b64.zip.to_hex
 		original_data = hex_encoded.from_hex.unzip.from_b64
 
 		original_title = png.metadata['Title']
@@ -122,6 +123,4 @@ end
 system "clear"
 
 stegano = Steganos.new
-# stegano.encode 'cypherpunks.pdf'
-# sleep 1
 stegano.decode 'cypherpunks.pdf.png'
