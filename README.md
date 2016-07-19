@@ -1,7 +1,6 @@
 Steganos
 =======
 
-=======
 The concept is easy and creative: get the data from the file, encode into base64, compact and encode it again into hexadecimal, then get each chunks of hexa values (ex: ff 12 d3) to compose the RGB pixels (ex: #ff12d3) that represents the data as an encoded PNG image in such a way that it can be reversed and decoded as the original file.
 
 This was a prove of concept written in Ruby (and parcially in Node.js) so I could upload 6GB of videos and PDFs to Flickr as images, and then get it back as the original files.
