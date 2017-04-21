@@ -6,7 +6,9 @@ The concept is easy and creative: get the data from the file, encode into base64
 This was a prove of concept written in Ruby (and parcially in Node.js) so I could upload 6GB of videos and PDFs to Flickr as images, and then get it back as the original files.
 
 [Julian Assange, Cypherpunks 6.3MB PDF as a decodable 4MB PNG]
-[![Julian Assange - Cypherpunks PDF] (https://raw.github.com/rafapolo/steganos/master/output-sample.jpg)](https://raw.github.com/rafapolo/steganos/master/cypherpunks.pdf.png)
+
+
+[![Julian Assange - Cypherpunks PDF](https://github.com/rafapolo/steganos/blob/master/output-sample.jpg?raw=true)]
 
 Simple text encoding sample:
 
