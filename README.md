@@ -25,7 +25,7 @@ and back to the original data,
 
 ```
 
-Rust version
+Rust version (48x faster)
 ------------
 
 A Rust implementation is included (now optimized) and can still decode the legacy Ruby PNGs.
@@ -47,19 +47,14 @@ cargo build --release
 Encode a file into a PNG:
 
 ```
-target/release/steganos encode path/to/input.bin
+steganos encode path/to/input.bin
 ```
 
-Decode a PNG back to the original file:
+Decode a PNG back to the original file. Try it with the original sample:
+
 
 ```
-target/release/steganos decode path/to/input.png
-```
-
-Try it with the original sample:
-
-```
-target/release/steganos decode cypherpunks.pdf.png --output decoded-cypherpunks.pdf
+steganos decode cypherpunks.pdf.png --output decoded-cypherpunks.pdf
 ```
 
 Notes:
@@ -67,15 +62,6 @@ Notes:
 - Decode output matches the Ruby behavior: the file is written as-is and a trailing newline is appended if missing.
 - Legacy PNGs (Ruby encoder) are still supported.
 
-Tests:
 
-```
-cargo test
-```
-
-Benchmark (release, Apple Silicon, Jan 31, 2026):
-
-- `target/release/steganos encode cypherpunks.pdf` → 0.058 s, output 2.329 MB
-- `target/release/steganos decode cypherpunks.pdf.png --output decoded-cypherpunks.pdf` → 0.011 s, output 6.261 MB
 
 More: http://en.wikipedia.org/wiki/Steganography
