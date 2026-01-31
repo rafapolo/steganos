@@ -8,7 +8,7 @@ This was a prove of concept written in Ruby (and parcially in Node.js) so I coul
 [Julian Assange, Cypherpunks 6.3MB PDF as a decodable 4MB PNG]
 
 
-[![Julian Assange - Cypherpunks PDF](https://github.com/rafapolo/steganos/blob/master/output-sample.jpg?raw=true)]
+[![Julian Assange - Cypherpunks PDF](https://github.com/rafapolo/steganos/blob/master/cypherpunks.pdf.png)]
 
 Simple text encoding sample:
 
