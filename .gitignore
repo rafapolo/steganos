@@ -1,1 +1,4 @@
 /coffeescript/node_modules
+.target
+target/
+.DS_Store
