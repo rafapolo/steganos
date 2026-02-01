@@ -25,13 +25,15 @@ and back to the original data,
 => "extrapolo"
 
 ```
- <span style="white-space:nowrap;">
-    <span>So, "extrapolo" as a PNG image = </span>
-    <span style="display:inline-block;width:20px;height:20px;background:#78da8b;"></span><span style="display:inline-block;width:20px;height:20px;background:#8ac830;"></span><span style="display:inline-block;width:20px;height:20px;background:#48ce75;"></span><span style="display:inline-block;width:20px;height:20px;background:#2b4f32;"></span><span style="display:inline-block;width:20px;height:20px;background:#aa28e3;"></span><span style="display:inline-block;width:20px;height:20px;background:#02001f;"></span><span style="display:inline-block;width:20px;height:20px;background:#be0464;"></span>
-<br/>
-</span>
 
-
+So, **"extrapolo"** as a PNG image:  
+![](https://dummyimage.com/20x20/78da8b/78da8b.png&text=+) 
+![](https://dummyimage.com/20x20/8ac830/8ac830.png&text=+) 
+![](https://dummyimage.com/20x20/48ce75/48ce75.png&text=+) 
+![](https://dummyimage.com/20x20/2b4f32/2b4f32.png&text=+) 
+![](https://dummyimage.com/20x20/aa28e3/aa28e3.png&text=+) 
+![](https://dummyimage.com/20x20/02001f/02001f.png&text=+) 
+![](https://dummyimage.com/20x20/be0464/be0464.png&text=+)
 <br>
 
 More at: http://en.wikipedia.org/wiki/Steganography
