@@ -3,12 +3,13 @@ Steganos
 
 The concept is easy and creative: get the data from the file, encode into base64, compact and encode it again into hexadecimal, then get each chunks of hexa values (ex: ff 12 d3) to compose the RGB pixels (ex: #ff12d3) that represents the data as an encoded PNG image in such a way that it can be reversed and decoded as the original file.
 
-This was a prove of concept written in Ruby (and parcially in Node.js) so I could upload 6GB of videos and PDFs to Flickr as images, and then get it back as the original files.
+This was a prove of concept written in Ruby so I could upload 6GB of videos and PDFs to Flickr as images, and then get it back as the original files.
 
 [Julian Assange, Cypherpunks 6.3MB PDF as a decodable 4MB PNG]
 
 
-[![Julian Assange - Cypherpunks PDF](https://github.com/rafapolo/steganos/blob/master/output-sample.jpg?raw=true)]
+![Julian Assange - Cypherpunks PDF](https://github.com/rafapolo/steganos/blob/master/output-sample.jpg?raw=true)
+
 
 Simple text encoding sample:
 
@@ -24,11 +25,26 @@ and back to the original data,
 => "extrapolo"
 
 ```
+ <span style="white-space:nowrap;">
+    <span>So, "extrapolo" as a PNG image = </span>
+    <span style="display:inline-block;width:20px;height:20px;background:#78da8b;"></span><span style="display:inline-block;width:20px;height:20px;background:#8ac830;"></span><span style="display:inline-block;width:20px;height:20px;background:#48ce75;"></span><span style="display:inline-block;width:20px;height:20px;background:#2b4f32;"></span><span style="display:inline-block;width:20px;height:20px;background:#aa28e3;"></span><span style="display:inline-block;width:20px;height:20px;background:#02001f;"></span><span style="display:inline-block;width:20px;height:20px;background:#be0464;"></span>
+<br/>
+</span>
 
-More: http://en.wikipedia.org/wiki/Steganography
 
-Rust version (48x faster) / AI Generated
-------------
+<br>
+
+More at: http://en.wikipedia.org/wiki/Steganography
+
+--- 
+
+##### -- 13 years later update --
+### Rust version / AI Generated
+
+  ```
+  Encode: ~45.0× faster (1.9041 s / 0.0423 s)
+  Decode: ~126.8× faster (1.0655 s / 0.0084 s)
+```
 
 A Rust implementation is included (now optimized) and can still decode the legacy Ruby PNGs.
 
